@@ -31,8 +31,8 @@ class DetailCategoryPage extends Component {
     }
     //onClick Item of FlatList
     _actionOnRow(item){
-      this.props.navigation.navigate('DetailMeal',{idMeal: item.idMeal});
-    this.props.navigation.push('DetailMeal',{idMeal: item.idMeal});
+     this.props.navigation.navigate('DetailMeal', {idMeal: item.idMeal});
+     //this.props.navigation.push('DetailMeal',{idMeal: item.idMeal});
     }
 
 

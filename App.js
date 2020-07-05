@@ -46,7 +46,7 @@ const HomeActivity = createStackNavigator({
   //All Screen of Home Activity will appear here
   Home: {
     screen: HomePage,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({route, navigation}) => ({
       title: 'Home',
       headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
       headerStyle: {
@@ -65,7 +65,7 @@ const CategoryActivity = createStackNavigator({
   //All Screen of Category Activity will appear here
   Category: {
     screen: CategoryPage,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({route, navigation}) => ({
       title: 'Categories',
       headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
       headerStyle: {
@@ -84,7 +84,7 @@ const SearchActivity = createStackNavigator({
   //All Screen of Home Activity will appear here
   Search: {
     screen: SearchPage,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({route, navigation}) => ({
       title: 'Search',
       headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
       headerStyle: {
@@ -101,7 +101,7 @@ const SearchActivity = createStackNavigator({
 const DetailCategoryScreen = createStackNavigator({
   DetailCategory: {
     screen: DetailCategoryPage,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({route, navigation}) => ({
       title: 'Category',
       headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
       headerStyle: {
@@ -118,7 +118,7 @@ const DetailCategoryScreen = createStackNavigator({
 const DetailMealScreen = createStackNavigator({
   DetailMeal: {
     screen: DetailMealPage,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({route, navigation}) => ({
       title: 'Detail Meal',
       headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
       headerStyle: {
@@ -131,14 +131,85 @@ const DetailMealScreen = createStackNavigator({
     })
   }
 }) 
+
+const MainView = createStackNavigator({
+  Home: {
+    screen: HomePage,
+    navigationOptions: ({route, navigation}) => ({
+      title: 'Home',
+      headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: 'white',
+      },
+      headerTintColor: 'white',
+      headerTitle: 'Home',
+      headerTitleStyle: {color: 'black'},
+      headerTitleAlign: 'center'
+    }),
+  },
+  Category: {
+    screen: CategoryPage,
+    navigationOptions: ({route, navigation}) => ({
+      title: 'Categories',
+      headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: 'white',
+      },
+      headerTintColor: 'white',
+      headerTitle: 'Categories',
+      headerTitleStyle: {color: 'black'},
+      headerTitleAlign: 'center'
+    }),
+  },
+  Search: {
+    screen: SearchPage,
+    navigationOptions: ({route, navigation}) => ({
+      title: 'Search',
+      headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: 'white',
+      },
+      headerTintColor: 'white',
+      headerTitle: 'Search',
+      headerTitleStyle: {color: 'black'},
+      headerTitleAlign: 'center'
+    }),
+  },
+  DetailCategory: {
+    screen: DetailCategoryPage,
+    navigationOptions: ({route, navigation}) => ({
+      title: 'Category',
+      headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: 'white',
+      },
+      headerTintColor: 'white',
+      headerTitle: 'Category',
+      headerTitleStyle: {color: 'black'},
+      headerTitleAlign: 'center'
+    })
+  },
+  DetailMeal: {
+    screen: DetailMealPage,
+    navigationOptions: ({route, navigation}) => ({
+      title: 'Detail Meal',
+      headerLeft: () => <NavigationMenuStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: 'white',
+      },
+      headerTintColor: 'white',
+      headerTitle: 'Detail Meal',
+      headerTitleStyle: {color: 'black'},
+      headerTitleAlign: 'center'
+    })
+  }
+
+})
+
 // create Drawer navigator
 
 const Drawer = createDrawerNavigator({
-  HomeScreen: { screen: HomeActivity },
-  CategoryScreen: { screen: CategoryActivity },
-  SearchScreen: { screen: SearchActivity },
-  DetailCategory: {screen: DetailCategoryScreen},
-  DetailMeal: {screen: DetailMealScreen},
+  MainView: MainView,
   },
   {
     contentComponent: SideMenu,

@@ -14,7 +14,8 @@ class DetailMealPage extends Component {
     }
     componentDidMount(){
         const idMeal  = this.props.navigation.getParam('idMeal','0');
-        console.log(idMeal);
+        //const params = this.props.navigation.state;
+        //console.warn(params);
         const url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+idMeal;
         fetch(url)
         .then(response => response.json())
